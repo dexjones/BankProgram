@@ -19,10 +19,10 @@ getBalance() getter to return the balance
 accountSummary() - prints all account information
  */
 public class BankAccount {
-    private String firstName;
-    private String lastName;
-    private int accountID;
-    private double balance;
+    protected String firstName;
+    protected String lastName;
+    protected int accountID;
+    protected double balance;
 
     public BankAccount() { // default constructor
         this.firstName = "";
