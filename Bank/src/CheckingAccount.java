@@ -13,6 +13,7 @@ Ensure that your program has the two required classes and a test class.
  */
 public class CheckingAccount extends BankAccount {
     private double interestRate;
+    private boolean firstName;
 
     public CheckingAccount() {
         super();
@@ -22,7 +23,6 @@ public class CheckingAccount extends BankAccount {
         super(firstName, lastName);
         this.interestRate = interestRate;
     }
-
     public void processWithdrawal(double amount) { //display negative balance & includes overdraft fee
         withdrawal(amount);
         if (balance < 0) {
@@ -30,8 +30,8 @@ public class CheckingAccount extends BankAccount {
             System.out.printf("Account overdrawn. A 30$ overdraft fee has been assessed.\nYour new balance is: $%.2f", balance);
         }
     }
-
     public String displayAccount() {
         return String.format("%s\nInterest rate: %.2f%%",super.accountSummary(),interestRate);
     }
+
 }

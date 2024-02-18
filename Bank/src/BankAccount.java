@@ -22,7 +22,7 @@ public class BankAccount {
     protected String firstName;
     protected String lastName;
     protected int accountID;
-    private int idCounter;
+    protected int idCounter;
     protected double balance;
 
     public BankAccount() { // default constructor
@@ -38,18 +38,17 @@ public class BankAccount {
         this.accountID = ++idCounter;
         this.balance = 0;
     }
-
-    public String getfirstName() {
-        return firstName;
-    }
     public String getLastName() {
         return lastName;
+    }
+    public String getFirstName() {
+        return firstName;
     }
     public int getAccountID() {
         return accountID;
     }
-    public double balance() {
-        return balance();
+    public double getBalance() {
+        return balance;
     }
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -71,4 +70,5 @@ public class BankAccount {
     public String accountSummary() { // prints all account information formatted
         return String.format("First Name: '%s'\nLast Name: '%s'\nAccount ID: %d\nBalance: %.2f", firstName, lastName, accountID, balance);
     }
+
 }
