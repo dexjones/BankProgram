@@ -22,19 +22,20 @@ public class BankAccount {
     protected String firstName;
     protected String lastName;
     protected int accountID;
+    private int idCounter;
     protected double balance;
 
     public BankAccount() { // default constructor
         this.firstName = "";
         this.lastName = "";
-        this.accountID = 0;
+        this.accountID = ++idCounter;
         this.balance = 0;
     }
 
-    public BankAccount(String firstName, String lastName, int accountID) { // parameterized constructor
+    public BankAccount(String firstName, String lastName) { // parameterized constructor
         this.firstName = firstName;
         this.lastName = lastName;
-        this.accountID = accountID;
+        this.accountID = ++idCounter;
         this.balance = 0;
     }
 
@@ -60,11 +61,11 @@ public class BankAccount {
         this.accountID = accountID;
     }
     public void deposit(double deposit) { // adds deposit to current balance
-        balance = deposit++;
+        balance += deposit;
     }
 
     public void withdrawal(double withdrawal) { // withdrawals money from balance
-        balance = withdrawal--;
+        balance -= withdrawal;
     }
 
     public String accountSummary() { // prints all account information formatted
